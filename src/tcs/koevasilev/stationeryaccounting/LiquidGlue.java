@@ -19,16 +19,6 @@ public class LiquidGlue extends Glue {
 
     private double volume;
 
-    public int compareTo(Stationery stationery) {
-        if (this.getPrice() == stationery.getPrice()) {
-            return 0;
-        } else if (this.getPrice() < stationery.getPrice()) {
-            return -1;
-        } else {
-            return 1;
-        }
-    }
-
     public double getVolume() {
         return volume;
     }

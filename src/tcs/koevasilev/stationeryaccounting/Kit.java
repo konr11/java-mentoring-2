@@ -3,7 +3,6 @@ package tcs.koevasilev.stationeryaccounting;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Kit {
 
@@ -39,13 +38,14 @@ public class Kit {
             System.out.println(val);
     }
 
-    private static class PriceComparator implements Comparator<Stationery>{
+    private static class PriceComparator implements Comparator<Stationery> {
         public int compare(Stationery o1, Stationery o2) {
 
             return (int) (o1.getPrice() - o2.getPrice());
         }
     }
-    private static class NameComparator implements Comparator<Stationery>{
+
+    private static class NameComparator implements Comparator<Stationery> {
         public int compare(Stationery o1, Stationery o2) {
 
             return o1.getName().compareTo(o2.getName());

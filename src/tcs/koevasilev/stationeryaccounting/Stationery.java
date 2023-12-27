@@ -20,7 +20,7 @@ public abstract class Stationery {
     }
 
     private String name;
-    private double price = 0;
+    private double price;
 
     @Override
     public boolean equals(Object o) {

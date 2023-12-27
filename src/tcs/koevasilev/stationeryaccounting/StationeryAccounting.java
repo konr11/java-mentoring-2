@@ -3,7 +3,6 @@ package tcs.koevasilev.stationeryaccounting;
 public class StationeryAccounting {
 
     private Employee[] employeesArr = new Employee[0];
-    private Kit[] kit = new Kit[0];
 
     private int IdCounter = 1;
 

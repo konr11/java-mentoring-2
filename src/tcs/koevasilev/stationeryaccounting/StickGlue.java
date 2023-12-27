@@ -15,16 +15,6 @@ public class StickGlue extends Glue {
         super(name, price, width, lenght);
     }
 
-    public int compareTo(Stationery stationery) {
-        if (this.getPrice() == stationery.getPrice()) {
-            return 0;
-        } else if (this.getPrice() < stationery.getPrice()) {
-            return -1;
-        } else {
-            return 1;
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
