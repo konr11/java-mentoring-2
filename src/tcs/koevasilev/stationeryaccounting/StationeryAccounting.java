@@ -3,6 +3,7 @@ package tcs.koevasilev.stationeryaccounting;
 public class StationeryAccounting {
 
     private Employee[] employeesArr = new Employee[0];
+    private Kit[] kit = new Kit[0];
 
     private int IdCounter = 1;
 
@@ -13,6 +14,9 @@ public class StationeryAccounting {
             if (val.getId() == empId) {
                 for (Stationery st : val.getStationeries()) {
                     priceSum += st.getPrice();
+                }
+                for (Kit kt : val.getKit()){
+                    priceSum += kt.getPrice();
                 }
                 System.out.println("Стоимость канцтоваров у сотрудника: " + val.getName() + " = " + priceSum + " Id = "+ val.getId());
             }
@@ -71,6 +75,13 @@ public class StationeryAccounting {
         System.out.println("All Employees:");
         for (Employee val : employeesArr){
             System.out.println(val);
+        }
+    }
+    public void addKitByEmpId(int empId,Kit[] kit){
+        for (Employee val : employeesArr){
+            if (val.getId() == empId) {
+                val.setKit(kit);
+            }
         }
     }
 }

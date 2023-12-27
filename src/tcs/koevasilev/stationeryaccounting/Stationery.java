@@ -2,7 +2,7 @@ package tcs.koevasilev.stationeryaccounting;
 
 import java.util.Objects;
 
-public class Stationery {
+public abstract class Stationery implements Comparable<Stationery> {
 
     public Stationery(String name, double price) {
         this.name = name;
@@ -25,12 +25,12 @@ public class Stationery {
         if (this == o) return true;
         if (!(o instanceof Stationery)) return false;
         Stationery that = (Stationery) o;
-        return Objects.equals(getName(), that.getName());
+        return Double.compare(getPrice(), that.getPrice()) == 0 && Objects.equals(getName(), that.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName());
+        return Objects.hash(getName(), getPrice());
     }
 
     @Override
@@ -54,12 +54,6 @@ public class Stationery {
     }
 
     public void setPrice(double price) {
-        this.price = price;
-    }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-    public void setPrice(long price) {
         this.price = price;
     }
 

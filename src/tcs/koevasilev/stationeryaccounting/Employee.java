@@ -18,7 +18,9 @@ public class Employee {
     private final int Id;
 
 
-    Stationery[] stationeries = new Stationery[0];
+    private Stationery[] stationeries = new Stationery[0];
+    private Kit[] kit = new Kit[0];
+
 
     @Override
     public String toString() {
@@ -26,6 +28,7 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", Id=" + Id +
                 ", stationeries=" + Arrays.toString(stationeries) +
+                ", kit=" + Arrays.toString(kit) +
                 '}';
     }
 
@@ -62,6 +65,13 @@ public class Employee {
         this.stationeries = stationeries;
     }
 
+    public Kit[] getKit() {
+        return kit;
+    }
+
+    public void setKit(Kit[] kit) {
+        this.kit = kit;
+    }
 
 
 }
