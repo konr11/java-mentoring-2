@@ -19,21 +19,25 @@ public class Main {
         stationeryAccounting.getAllEmployees();
         stationeryAccounting.ShowStationeryPriceByEmpId(1);
         stationeryAccounting.addEmployee("Адам", new Stationery[]{new LiquidGlue("Клей 1",300,3,4,200)});
+
         Kit beginnerset = new Kit("набор новичка",new Stationery[]{new Scissors("Новые ножницы",250,3,4),
-                                                                            new LiquidGlue("ПВА",400.4,4,4,200),
-                                                                            new StickGlue("Клей карандаш",330.4,2,4)});
+                                                                            new LiquidGlue("Альфа ПВА",300,4,4,200),
+                                                                            new StickGlue("Клей карандаш",330.4,2,4),
+                                                                            new LiquidGlue("Клей карандаш 1",300,3,4,200),
+                                                                            new StickGlue("Хороший клей",200.4,2,4)});
         stationeryAccounting.addKitByEmpId(4,new Kit[]{beginnerset});
         stationeryAccounting.ShowStationeryPriceByEmpId(4);
         stationeryAccounting.getEmployeeById(4);
         //Задание 4.  Сортировка:
-        beginnerset.nameSort();
-        System.out.println(beginnerset);
-
-        beginnerset.priceSort();
-        System.out.println(beginnerset);
-
+        System.out.println("Price and Name sort:");
         beginnerset.priceNameSort();
-        System.out.println(beginnerset);
+        System.out.println("Name sort:");
+        beginnerset.nameSort();
+        System.out.println("Price sort:");
+        beginnerset.priceSort();
+
+
+
 
     }
 }

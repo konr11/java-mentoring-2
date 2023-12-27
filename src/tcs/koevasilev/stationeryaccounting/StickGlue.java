@@ -1,6 +1,6 @@
 package tcs.koevasilev.stationeryaccounting;
 
-public class StickGlue extends Glue{
+public class StickGlue extends Glue {
 
 
     public StickGlue(String name, double price, double width, double lenght) {
@@ -14,6 +14,7 @@ public class StickGlue extends Glue{
     public StickGlue(String name, long price, double width, double lenght) {
         super(name, price, width, lenght);
     }
+
     public int compareTo(Stationery stationery) {
         if (this.getPrice() == stationery.getPrice()) {
             return 0;
@@ -23,6 +24,7 @@ public class StickGlue extends Glue{
             return 1;
         }
     }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
@@ -38,7 +40,7 @@ public class StickGlue extends Glue{
         return "StickGlue{" +
                 "name='" + super.getName() + '\'' +
                 ", price=" + super.getPrice() +
-                "width=" + super.getWidth() +
+                ", width=" + super.getWidth() +
                 ", lenght=" + super.getLenght() +
                 '}';
     }

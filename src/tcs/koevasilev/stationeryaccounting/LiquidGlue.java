@@ -1,20 +1,20 @@
 package tcs.koevasilev.stationeryaccounting;
 
-public class LiquidGlue extends Glue{
+public class LiquidGlue extends Glue {
 
-    public LiquidGlue(String name, double price, double width, double lenght,double volume) {
+    public LiquidGlue(String name, double price, double width, double lenght, double volume) {
         super(name, price, width, lenght);
-        this.volume=volume;
+        this.volume = volume;
     }
 
-    public LiquidGlue(String name, int price, double width, int lenght,double volume) {
+    public LiquidGlue(String name, int price, double width, int lenght, double volume) {
         super(name, price, width, lenght);
-        this.volume=volume;
+        this.volume = volume;
     }
 
-    public LiquidGlue(String name, long price, double width, long lenght,double volume) {
+    public LiquidGlue(String name, long price, double width, long lenght, double volume) {
         super(name, price, width, lenght);
-        this.volume=volume;
+        this.volume = volume;
     }
 
     private double volume;
@@ -28,6 +28,7 @@ public class LiquidGlue extends Glue{
             return 1;
         }
     }
+
     public double getVolume() {
         return volume;
     }
@@ -51,7 +52,7 @@ public class LiquidGlue extends Glue{
         return "LiquidGlue{" +
                 "name='" + super.getName() + '\'' +
                 ", price=" + super.getPrice() +
-                "width=" + super.getWidth() +
+                ", width=" + super.getWidth() +
                 ", lenght=" + super.getLenght() +
                 ", volume=" + volume +
                 '}';

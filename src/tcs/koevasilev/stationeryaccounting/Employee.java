@@ -2,14 +2,16 @@ package tcs.koevasilev.stationeryaccounting;
 
 import java.util.Arrays;
 import java.util.Objects;
+
 //замнить на рабочее место
 public class Employee {
 
-    public Employee(String name,int id) {
+    public Employee(String name, int id) {
         this.name = name;
         Id = id;
     }
-    public Employee(String name,int id ,Stationery[] stationeries) {
+
+    public Employee(String name, int id, Stationery[] stationeries) {
         this(name, id);
         this.stationeries = stationeries;
     }

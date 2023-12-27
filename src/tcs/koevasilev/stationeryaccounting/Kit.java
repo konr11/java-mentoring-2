@@ -3,11 +3,12 @@ package tcs.koevasilev.stationeryaccounting;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Kit {
 
-    public Kit(String name,Stationery[] stationeries) {
-        this.name=name;
+    public Kit(String name, Stationery[] stationeries) {
+        this.name = name;
         this.stationeries = stationeries;
         for (Stationery st : stationeries)
             this.price += st.getPrice();
@@ -18,39 +19,37 @@ public class Kit {
     private double price = 0;
     private Stationery[] stationeries;
 
-    public void nameSort(){
-        Arrays.sort(stationeries,new Comparator<Stationery>() {
-
-            public int compare(Stationery o1, Stationery o2) {
-
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+    public void nameSort() {
+        Arrays.sort(stationeries, new NameComparator());
+        for (Stationery val : stationeries)
+            System.out.println(val);
     }
 
-    public void priceSort(){
-        Arrays.sort(stationeries,new Comparator<Stationery>() {
-
-            public int compare(Stationery o1, Stationery o2) {
-
-                return (int) (o1.getPrice() - o2.getPrice());
-            }
-        });
+    public void priceSort() {
+        Arrays.sort(stationeries, new PriceComparator());
+        for (Stationery val : stationeries)
+            System.out.println(val);
     }
-    public void priceNameSort(){
-        Arrays.sort(stationeries,new Comparator<Stationery>() {
 
-            public int compare(Stationery o1, Stationery o2) {
-                if (o1.getName().compareTo(o2.getName()) == 0 && (int) (o1.getPrice() - o2.getPrice()) == 0){
-                    return 0;
-                } else if (o1.getName().compareTo(o2.getName()) > 0 && (int) (o1.getPrice() - o2.getPrice()) > 0) {
-                    return 1;
-                } else {
-                    return -1;
-                }
+    public void priceNameSort() {
+        stationeries = Arrays.stream(stationeries).sorted(
+                Comparator.comparing(Stationery::getPrice).thenComparing(Stationery::getName)
+        ).toArray(Stationery[]::new);
+        for (Stationery val : stationeries)
+            System.out.println(val);
+    }
 
-            }
-        });
+    private static class PriceComparator implements Comparator<Stationery>{
+        public int compare(Stationery o1, Stationery o2) {
+
+            return (int) (o1.getPrice() - o2.getPrice());
+        }
+    }
+    private static class NameComparator implements Comparator<Stationery>{
+        public int compare(Stationery o1, Stationery o2) {
+
+            return o1.getName().compareTo(o2.getName());
+        }
     }
 
     @Override

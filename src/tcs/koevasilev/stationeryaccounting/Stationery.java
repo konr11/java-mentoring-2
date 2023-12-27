@@ -2,16 +2,18 @@ package tcs.koevasilev.stationeryaccounting;
 
 import java.util.Objects;
 
-public abstract class Stationery implements Comparable<Stationery> {
+public abstract class Stationery {
 
     public Stationery(String name, double price) {
         this.name = name;
         this.price = price;
     }
+
     public Stationery(String name, int price) {
         this.name = name;
         this.price = price;
     }
+
     public Stationery(String name, long price) {
         this.name = name;
         this.price = price;

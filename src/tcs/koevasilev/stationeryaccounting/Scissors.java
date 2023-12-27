@@ -1,6 +1,6 @@
 package tcs.koevasilev.stationeryaccounting;
 
-public class Scissors extends Stationery{
+public class Scissors extends Stationery {
 
     public Scissors(String name, double price, double width, double lenght) {
         super(name, price);
@@ -19,6 +19,7 @@ public class Scissors extends Stationery{
         this.width = width;
         this.lenght = lenght;
     }
+
     private double width;
     private double lenght;
 
@@ -53,7 +54,7 @@ public class Scissors extends Stationery{
         return "Scissors{" +
                 "name='" + super.getName() + '\'' +
                 ", price=" + super.getPrice() +
-                "width=" + width +
+                ", width=" + width +
                 ", lenght=" + lenght +
                 '}';
     }
@@ -76,15 +77,5 @@ public class Scissors extends Stationery{
     @Override
     public void setPrice(double price) {
         super.setPrice(price);
-    }
-
-    public int compareTo(Stationery stationery) {
-        if (this.getPrice() == stationery.getPrice()) {
-            return 0;
-        } else if (this.getPrice() < stationery.getPrice()) {
-            return -1;
-        } else {
-            return 1;
-        }
     }
 }
