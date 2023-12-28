@@ -1,6 +1,6 @@
 package tcs.koevasilev.stationeryaccounting;
 
-public abstract class Glue extends Stationery {
+public class Glue extends Stationery {
     public Glue(String name, double price, double width, double lenght) {
         super(name, price);
         this.width = width;

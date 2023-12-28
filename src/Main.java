@@ -19,7 +19,7 @@ public class Main {
         stationeryAccounting.getAllEmployees();
         stationeryAccounting.ShowStationeryPriceByEmpId(1);
         stationeryAccounting.addEmployee("Адам", new Stationery[]{new LiquidGlue("Клей 1", 300, 3, 4, 200)});
-
+        //Задание 2. Наследование
         Kit beginnerSet = new Kit("набор новичка", new Stationery[]{
                 new Scissors("Новые ножницы", 250, 3, 4),
                 new LiquidGlue("Альфа ПВА", 300, 4, 4, 200),
